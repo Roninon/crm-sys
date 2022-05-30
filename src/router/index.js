@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    meta: {layout: 'main'},
+    component: () => import('@/views/app-home')
   },
   {
     path: '/login',
@@ -18,6 +18,42 @@ const routes = [
     name: 'app-categories',
     meta: {layout: 'main'},
     component: () => import('@/views/app-categories.vue')
+  },
+  {
+    path: '/register',
+    name: 'app-register',
+    meta: {layout: 'empty'},
+    component: () => import('@/views/app-register.vue')
+  },
+  {
+    path: '/detail-record',
+    name: 'app-detail-record',
+    meta: {layout: 'main'},
+    component: () => import('@/views/app-detail-record.vue')
+  },
+  {
+    path: '/history',
+    name: 'app-history',
+    meta: {layout: 'main'},
+    component: () => import('@/views/app-history.vue')
+  },
+  {
+    path: '/planning',
+    name: 'app-planning',
+    meta: {layout: 'main'},
+    component: () => import('@/views/app-planning.vue')
+  },
+  {
+    path: '/profile',
+    name: 'app-profile',
+    meta: {layout: 'main'},
+    component: () => import('@/views/app-profile.vue')
+  },
+  {
+    path: '/record',
+    name: 'app-record',
+    meta: {layout: 'main'},
+    component: () => import('@/views/app-record.vue')
   }
 ]
 
