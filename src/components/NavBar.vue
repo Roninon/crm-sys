@@ -2,9 +2,11 @@
   <nav class="navbar orange lighten-1">
     <div class="nav-wrapper">
       <div class="navbar-left">
-        <a href="#" @click.prevent="$emit('click')">
-          <i class="material-icons black-text">menu</i>
-        </a>
+        <div>
+          <a href="#" @click.prevent="$emit('click')">
+            <i class="material-icons black-text">menu</i>
+          </a>
+        </div>
         <span class="black-text">12.12.12</span>
       </div>
 
@@ -14,6 +16,7 @@
             class="dropdown-trigger black-text"
             href="#"
             data-target="dropdown"
+            ref="dropdown"
           >
             USER NAME
             <i class="material-icons right">arrow_drop_down</i>
@@ -37,3 +40,15 @@
     </div>
   </nav>
 </template>
+
+<script>
+import M from "materialize-css/dist/js/materialize.min";
+
+export default {
+  mounted() {
+    M.Dropdown.init(this.$refs.Dropdown, {
+      constrainWidth: false,
+    });
+  },
+};
+</script>
